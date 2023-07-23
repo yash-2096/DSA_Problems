@@ -7,4 +7,69 @@ Output: true
 Example 2:
 
 Input: nums = [1,2,3,4]
-Output: false
+Output: false 
+
+*********************************************************************************************************************************************************************************************
+
+// Solution-1 The brute force approach involves comparing each element in the array with every other element to check for duplicates. If any duplicates are found, return true, otherwise return false.  Time complexity O(n^2) {Not recommended!}
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        int n = nums.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i] == nums[j])
+                    return true;
+            }
+        }
+        return false;
+    }
+}
+
+// Solution-2 The sorting approach sorts the array in ascending order and then checks for adjacent elements that are the same. If any duplicates are found, it returns true.
+Time complexity O(n log n).  {less recommended}
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        boolean ans=false;
+        Arrays.sort(nums);
+        for(int i=1;i<=nums.length-1;i++){
+          if(nums[i]==nums[i-1])
+          ans=true;        
+        }
+        return ans;
+    }
+}
+
+// Solution-3 The hash set approach uses a hash set data structure to store encountered elements. It iterates through the array, checking if an element is already in the set. If so, it returns true. Otherwise, it adds the element to the set. Time complexity O(n) {Highly Recommended}
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> seen = new HashSet<>();
+        for (int num : nums) {
+            if (seen.contains(num))
+                return true;
+            seen.add(num);
+        }
+        return false;
+    }
+}
+
+// Solution-4 The hash map approach is similar to the hash set approach but also keeps track of the count of occurrences for each element. It uses a hash map to store the elements as keys and their counts as values. If a duplicate element is encountered (count greater than or equal to 1), it returns true. Time complexity O(n) {Highly Recommended}
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashMap<Integer, Integer> seen = new HashMap<>();
+        for (int num : nums) {
+            if (seen.containsKey(num) && seen.get(num) >= 1)
+                return true;
+            seen.put(num, seen.getOrDefault(num, 0) + 1);
+        }
+        return false;
+    }
+}
+
+
+
+
+
