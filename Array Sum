@@ -10,11 +10,23 @@ public static void main(String[] args){
 scanner sc=new Scanner(System.in);
 int n=sc.nextInt();
 int arr[]= new int[20];
-
+//Array Elements input
 System.out.println("Enter elements of array: ");
 for(int i=0;i<n;i++){
 arr[i]=sc.nextInt();
 }
+//Array Elements 
+System.out.println("Elements of array are: ");
+for(int i=0;i<n;i++){
+console.log(arr[i]);
+}
+//Sum of the array elements
+int sum=0;
+System.out.println("Sum of Elements of array are: ");
+for(int i=0;i<n;i++){
+sum=sum+arr[i];
+}
+console.log(sum);
 
 
 }  //main() 
