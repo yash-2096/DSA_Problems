@@ -1,0 +1,35 @@
+You are given an array of strings, where each string consists of lowercase characters from a to j. You need to find the maximum number of strings that can be concatenated together such that the resulting string can be made out of exactly k distinct characters.
+Return 0 if it is not possible to find a set of strings that satisfy the above condition.
+
+Example 1:
+
+Input: 
+n = 4
+str = [ "abc", "de", "fg", "h"]
+k = 5
+Output: 3
+Explanation: The strings de, fg and h would add up to defgh which has exactly 5 distinct characters. 
+Example 2:
+
+Input: 
+n = 3
+str = [ "abcde", "de", "fghi"]
+k = 5
+Output: 2
+Explanation: The strings abcde and de would add up to abcdede which has exactly 5 distinct characters. 
+Your Task: You don't need to read or print anything. Your task is to complete the function GetMax() that takes the number of strings (n),  an integer k, and an array of strings (str) as input. Return the maximum number of nodes of strings that can be concatenated together such that the resulting string has exactly k distinct characters.
+
+Constraints:
+1 <= n <= 105
+1 <= str[i].length() <= 15
+1 <= k <= 10
+Note: str[i] contains lowercase english characters from a to j
+
+
+class Solution{
+    public int GetMax(int n, int k, String s[]){
+        // Code Here.       
+    }
+}
+
+//*****************************************************************************************************************************
