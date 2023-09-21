@@ -1,0 +1,38 @@
+You are presented with a unique tree structure consisting of two types of nodes: nodes of type A and nodes of type B. Each node of type A is required to have exactly k edges, while each node of type B should have only one edge.
+Given the value of k and n (the number of nodes of type A) in the tree, compute the total number of nodes of type B present in the tree.
+
+Note: A tree with m nodes has m - 1 edges and no cycle.
+
+Example 1:
+
+Input:
+n = 2
+k = 4
+Output: 6
+Explanation: 
+The tree is given below where 3 B's are connected to each A, which are connected to each other.
+
+Example 2:
+
+Input:
+n = 3
+k = 5
+Output: 11
+Explanation:
+One of the valid trees is given below.
+
+
+Your Task: You don't need to read or print anything. Your task is to complete the function CountB() that takes a number of nodes of type A (n),  an integer k, as input. Return the number of nodes of type B in the tree.
+
+Constraints:
+1 <= n <= 106
+2 <= k <= 106 
+
+
+
+class Solution{
+    public long countB(int n, int k){
+        // Code Here.
+        
+    }
+}
