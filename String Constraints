@@ -1,0 +1,27 @@
+You are given a string consisting of digits (1 to 9). We call a substring of the given string good if the frequency of each character in the substring is strictly less than the maximum digit of the substring.
+
+For example, the string 11223 is good as the maximum digit is 3, and the frequency of each character is less than 3. Similarly the string 1112 is not a good string because the frequency of character '1' exceeds the maximum digit which is 2.
+
+Given a string s, find the number of good substrings of that string.
+
+Example 1:
+
+Input:
+s = 122321
+Output: 13
+Explanation: The substrings 12, 1223, 2, 223, 2, 23, 232, 2321, 3, 32, 321, 2, 21 are good substrings.
+
+Example 2:
+
+Input: 
+s = 1231
+Output: 8
+Explanation: The substrings 12, 123, 1231, 2, 23, 231, 3, 31 are good substrings. 
+Your Task: You don't need to read or print anything. Your task is to complete the function CountStrings() that takes the string s as an argument. Return the number of good substrings of of string s.
+
+Constraints:
+1 <= length (s) <= 105    
+
+
+///**********************************************************************************************************************************************************************************
+
