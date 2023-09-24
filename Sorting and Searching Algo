@@ -1,0 +1,96 @@
+Here is a list of common time complexities for sorting algorithms, ranked in best to worst order:
+
+1. **Best Time Complexity - O(n):**
+   - Counting Sort (when the range of input values is limited)
+
+2. **O(n log n) Time Complexity (Average and Best Case):**
+   - Merge Sort
+   - Heap Sort
+   - Quick Sort (average case)
+
+3. **O(n log n) Time Complexity (Average Case) - Unstable:**
+   - Timsort (used in Python)
+
+4. **O(n log n) Time Complexity (Worst Case):**
+   - Merge Sort
+   - Heap Sort
+   - Quick Sort (worst case)
+
+5. **O(n^2) Time Complexity (Average and Worst Case):**
+   - Bubble Sort
+   - Selection Sort
+   - Insertion Sort
+   - Quick Sort (worst case)
+
+6. **O(n^2) Time Complexity (Best Case):**
+   - Bubble Sort (when the array is already sorted)
+
+7. **O(n^2) Time Complexity (Average Case) - Unstable:**
+   - Shell Sort
+
+8. **O(n^2) Time Complexity (Worst Case) - Unstable:**
+   - Bogosort (a joke sorting algorithm with very high time complexity)
+
+Please note that these time complexities are general categories, and the actual performance of sorting algorithms can vary depending on various factors, including the specific implementation and the characteristics of the input data (e.g., already sorted, partially sorted, or completely random). It's essential to consider these factors when choosing a sorting algorithm for a particular task.
+
+
+#Sorting Algorithms-
+
+1.Bubble Sort:
+ *Compare adjacent elements and swap if they're in the wrong order.
+ *Repeat until no swaps are needed.
+ *Time Complexity: O(n^2)
+  public static void bubbleSort(int[] arr) {  
+        int n = arr.length;  
+        int temp = 0;  
+         for(int i=0; i < n; i++){  
+                 for(int j=1; j < (n-i); j++){  
+                          if(arr[j-1] > arr[j]){  
+                                 //swap elements  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }        
+                 }  
+         }  
+}
+
+2.Selection Sort:
+ *Find the minimum element from the unsorted part and swap it with the first element.
+ *Repeat for the remaining unsorted part.
+ *Time Complexity: O(n^2)
+  public static void selectionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        // Swap arr[i] and arr[minIndex]
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
+
+3.Insertion Sort:
+  *Build a sorted array by repeatedly inserting elements from the unsorted part into their correct position.
+  *Time Complexity: O(n^2)
+   public static void insertionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+4.Merge Sort:
+ *Divide the array into two halves, recursively sort them, and then merge the sorted halves.
+ *Time Complexity: O(n log n)
