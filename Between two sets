@@ -1,0 +1,53 @@
+There will be two arrays of integers. Determine all integers that satisfy the following two conditions:
+
+The elements of the first array are all factors of the integer being considered
+The integer being considered is a factor of all elements of the second array
+These numbers are referred to as being between the two arrays. Determine how many such numbers exist.
+Function Description
+
+Complete the getTotalX function in the editor below. It should return the number of integers that are betwen the sets.
+
+getTotalX has the following parameter(s):
+
+int a[n]: an array of integers
+int b[m]: an array of integers
+Returns
+
+int: the number of integers that are between the sets
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public static int getTotalX(List<Integer> a, List<Integer> b) {
+    // Write your code here
+    int ele_a=a.size(); // size of list "a"
+    int ele_b=b.size(); // size of list "b"
+    int count=0;        // count of same integers that are multiple of elements of list "a" and factors of eelements         
+      
+    // Starting from last(biggest) element of List "a" to first(smallest) element of List "b"
+        for(int i=a.get(ele_a-1);i<=b.get(0);i++){
+         // checker for same integers  
+          int check=1;  
+          // for all elements of list "a"   
+          for(int j=0;j<ele_a;j++){
+            // Checking common multiples of elements of list "a"  
+              if(i%a.get(j)!=0){
+                 check=0;
+                 break; 
+              }
+          }
+          
+          // for all elements of list "b"
+            for(int k=0;k<ele_b;k++){
+            //Checking common factors of elements of list "b"
+               if(b.get(k)%i!=0){
+                   check=0;
+                   break;
+               }     
+            }
+     // same integers count        
+        if(check==1)
+            count++;     
+        }
+        
+        return count;
+    }
+    
